@@ -3,6 +3,8 @@
 
 ---
 
+Member : Li, Bowen | Fabregas, Matthew Drew
+
 # Project Description
 
 This project converts a grayscale image represented using single precision floating-point values (0.0 to 1.0) into unsigned 8-bit integer grayscale values (0 to 255).

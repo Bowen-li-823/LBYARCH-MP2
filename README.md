@@ -179,6 +179,8 @@ Registers used
 
 # Performance Results
 
+This section showcases the results after running our program. We ran the performance test for 30 runs through different image sizes to ensure consistency of results.
+
 | Image Size | Average Time |
 |------------|--------------|
 |10 × 10|0.103 microseconds|

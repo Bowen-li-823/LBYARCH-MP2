@@ -185,6 +185,35 @@ Registers used
 |100 × 100|15.057 microseconds|
 |1000 × 1000|1704.900 microseconds|
 
+### Raw CMD Output
+
+```text
+=== Performance Test: Assembly Function Only ===
+Correctness check: PASSED (100 pixels)
+Image size: 10 x 10 = 100 pixels
+Runs: 30
+Average ASM time: 0.103 microseconds
+Minimum ASM time: 0.100 microseconds
+Average throughput: 967.771 MPixels/second
+Status: PASS
+
+Correctness check: PASSED (10000 pixels)
+Image size: 100 x 100 = 10000 pixels
+Runs: 30
+Average ASM time: 15.057 microseconds
+Minimum ASM time: 8.400 microseconds
+Average throughput: 664.158 MPixels/second
+Status: PASS
+
+Correctness check: PASSED (1000000 pixels)
+Image size: 1000 x 1000 = 1000000 pixels
+Runs: 30
+Average ASM time: 1704.900 microseconds
+Minimum ASM time: 1034.000 microseconds
+Average throughput: 586.545 MPixels/second
+Status: PASS
+```
+
 ---
 
 # Performance Analysis

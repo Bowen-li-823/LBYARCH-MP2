@@ -243,5 +243,7 @@ int main(void)
     printf("=== Optional Manual Input ===\n");
     run_manual_input();
 
+    system("pause");
+
     return 0;
 }

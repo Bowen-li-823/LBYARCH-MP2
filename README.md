@@ -195,11 +195,16 @@ This section details the benchmark results of the x86-64 assembly conversion fun
 
 # Performance Analysis
 
-The execution time increases as the image size increases because the assembly function processes one pixel at a time using scalar SIMD instructions.
+The benchmark results reveal several key hardware and software characteristics regarding how the assembly code executes.
 
-The 10 × 10 image finishes very quickly, so timer overhead has a larger effect.
+**1. Time Complexity and Scaling**
+As expected, the execution time scales linearly with the number of pixels. Processing 100 pixels (10×10) took approximately 0.1 μs, while processing 1,000,000 pixels (1000×1000) took roughly 1,704 μs. Because the assembly function loops through the image one pixel at a time, the algorithm operates at a time complexity of **O(n)**, where 'n' is the total number of pixels. 
 
-The 1000 × 1000 image provides a more stable timing result because it performs one million pixel conversions.
+**2. Throughput Bottleneck (Cache vs. Main Memory)**
+While the raw execution time scales linearly, the *Average Throughput* (MPixels/second) actually decreases as the image size increases. It drops from ~967 MP/s on the 10×10 image down to ~586 MP/s on the 1000×1000 image. This happens due to **CPU Cache limits**. Small images easily fit entirely inside the CPU's ultra-fast L1/L2 cache, meaning memory access is nearly instantaneous. However, a 1000×1000 image is 4 Megabytes of floating-point data. This spills out of the fast cache and forces the CPU to constantly fetch data from slower Main Memory (RAM), which introduces memory latency and slightly bottlenecks the overall calculation speed.
+
+**3. Optimization Limits (Scalar vs Vector SIMD)**
+While the code is highly optimized at the hardware level, it is fundamentally limited by the project instructions. The rubric specifically required the use of **Scalar SIMD** instructions (such as `MOVSS` and `MULSS`). This forces the CPU to process exactly one pixel per clock cycle. If we had been allowed to use Packed/Vector SIMD instructions, we could have processed 4 or 8 pixels simultaneously in a single instruction, which would have drastically improved the throughput.
 
 ---
 

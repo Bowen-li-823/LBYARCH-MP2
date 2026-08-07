@@ -179,42 +179,17 @@ Registers used
 
 # Performance Results
 
-This section showcases the results after running our program. We ran the performance test for 30 runs through different image sizes to ensure consistency of results.
+This section details the benchmark results of the x86-64 assembly conversion function. The performance was tested across three different image resolutions (10x10, 100x100, and 1000x1000). To ensure statistical reliability and account for timer overhead, each image size was processed for 30 consecutive runs. The table below summarizes the average execution time, minimum execution time, overall throughput, and the correctness status.
 
-| Image Size | Average Time |
-|------------|--------------|
-|10 × 10|0.103 microseconds|
-|100 × 100|15.057 microseconds|
-|1000 × 1000|1704.900 microseconds|
+| Image Size | Avg ASM Time (μs) | Min ASM Time (μs) | Avg Throughput (MP/s) | Status |
+|------------|-------------------|-------------------|-----------------------|--------|
+| 10 × 10 | 0.103 | 0.100 | 967.771 | PASS |
+| 100 × 100 | 15.057 | 8.400 | 664.158 | PASS |
+| 1000 × 1000 | 1704.900 | 1034.000 | 586.545 | PASS |
 
-### Raw CMD Output
+### Output Screenshot
 
-```text
-=== Performance Test: Assembly Function Only ===
-Correctness check: PASSED (100 pixels)
-Image size: 10 x 10 = 100 pixels
-Runs: 30
-Average ASM time: 0.103 microseconds
-Minimum ASM time: 0.100 microseconds
-Average throughput: 967.771 MPixels/second
-Status: PASS
-
-Correctness check: PASSED (10000 pixels)
-Image size: 100 x 100 = 10000 pixels
-Runs: 30
-Average ASM time: 15.057 microseconds
-Minimum ASM time: 8.400 microseconds
-Average throughput: 664.158 MPixels/second
-Status: PASS
-
-Correctness check: PASSED (1000000 pixels)
-Image size: 1000 x 1000 = 1000000 pixels
-Runs: 30
-Average ASM time: 1704.900 microseconds
-Minimum ASM time: 1034.000 microseconds
-Average throughput: 586.545 MPixels/second
-Status: PASS
-```
+![Program Output](output_matt.png)
 
 ---
 

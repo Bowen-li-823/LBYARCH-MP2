@@ -1,9 +1,14 @@
 # LBYARCH MP2
 ## Float Grayscale to uint8 Conversion Using C and x86-64 Assembly
 
+Member : Li, Bowen | Fabregas, Matthew Drew
+
 ---
 
-Member : Li, Bowen | Fabregas, Matthew Drew
+# Video
+https://drive.google.com/file/d/18FLBEKgbBr2RlSxuq04hV-_YUffEdw7q/view?usp=sharing
+
+---
 
 # Project Description
 
@@ -210,9 +215,4 @@ While the code is highly optimized at the hardware level, it is fundamentally li
 
 
 
----
-
-# Video
-
-()
 
